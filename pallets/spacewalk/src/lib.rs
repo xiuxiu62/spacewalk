@@ -34,9 +34,8 @@ use substrate_stellar_sdk as stellar;
 use frame_support::pallet_prelude::*;
 use frame_system::pallet_prelude::*;
 
-type BalanceOf<T> = <<T as Config>::Currency as MultiCurrency<
-	<T as frame_system::Config>::AccountId,
->>::Balance;
+type BalanceOf<T> =
+	<<T as Config>::Currency as MultiCurrency<<T as frame_system::Config>::AccountId>>::Balance;
 
 type CurrencyIdOf<T> =
 	<<T as Config>::Currency as MultiCurrency<<T as frame_system::Config>::AccountId>>::CurrencyId;
@@ -48,6 +47,7 @@ pub const KEY_TYPE: KeyTypeId = KeyTypeId(*b"abcd");
 /// them with the pallet-specific identifier.
 pub mod crypto {
 	use super::KEY_TYPE;
+	use alloc::{format, string::String};
 	use sp_runtime::app_crypto::{app_crypto, ed25519};
 
 	app_crypto!(ed25519, KEY_TYPE);

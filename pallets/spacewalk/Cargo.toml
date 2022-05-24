@@ -12,6 +12,9 @@ version = "4.0.0-dev"
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
 
+[build-dependencies]
+substrate-wasm-builder = {git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.18"}
+
 [dependencies]
 base64 = {version = '0.13.0', default-features = false, features = ['alloc']}
 codec = {package = "parity-scale-codec", version = "3.0.0", default-features = false}
