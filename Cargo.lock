@@ -4020,6 +4020,7 @@ dependencies = [
  "sp-std",
  "spacewalk-runtime-standalone",
  "substrate-stellar-sdk",
+ "substrate-wasm-builder",
 ]
 
 [[package]]
